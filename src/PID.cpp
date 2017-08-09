@@ -24,8 +24,10 @@ void PID::Init(double init_Kp, double init_Ki, double init_Kd) {
 
 void PID::UpdateError(double cte) {
     p_error = cte;
-    
+    i_error += cte;
+    d_error = cte;
 }
 
 double PID::TotalError() {
+    return Kp * p_error + Ki * i_error + Kd * d_error;
 }
