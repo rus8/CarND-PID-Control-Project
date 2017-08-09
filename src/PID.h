@@ -12,7 +12,7 @@ public:
 
   /*
   * Coefficients
-  */ 
+  */
   double Kp;
   double Ki;
   double Kd;
@@ -30,7 +30,7 @@ public:
   /*
   * Initialize PID.
   */
-  void Init(double Kp, double Ki, double Kd);
+  void Init(double init_Kp, double init_Ki, double init_Kd);
 
   /*
   * Update the PID error variables given cross track error.
