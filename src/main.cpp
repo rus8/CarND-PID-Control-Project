@@ -34,7 +34,7 @@ int main()
 
   PID pid;
   // TODO: Initialize the pid variable.
-  pid.Init()
+  pid.Init(1, 1, 1);
 
   h.onMessage([&pid](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
     // "42" at the start of the message means there's a websocket message event.
@@ -64,7 +64,7 @@ int main()
           steer_value = -pid.TotalError();
           //Saturation
           if (steer_value < -1){
-              steer_value = -1
+              steer_value = -1;
           } else if (steer_value > 1){
               steer_value = 1;
           }
