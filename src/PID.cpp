@@ -20,12 +20,15 @@ void PID::Init(double init_Kp, double init_Ki, double init_Kd) {
     Kp = init_Kp;
     Ki = init_Ki;
     Kd = init_Kd;
+
+    prev_cte = 0;
 }
 
 void PID::UpdateError(double cte) {
     p_error = cte;
     i_error += cte;
-    d_error = cte;
+    d_error = cte - prev_cte;
+    prev_cte = cte;
 }
 
 double PID::TotalError() {
