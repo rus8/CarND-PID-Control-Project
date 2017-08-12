@@ -3,7 +3,7 @@ Self-Driving Car Engineer Nanodegree Program
 
 ## Overview
 
-In this project the error which is used in PID controller is a cross track error (CTE) -- the distance between center of vehicle and center of the track.
+In this project the error which is used in PID controller is a cross track error (CTE) - the distance between center of vehicle and center of the track.
 
 Environment provides the following data: CTE, velocity, steering angle.
 
@@ -13,12 +13,12 @@ helps to reduce oscillations. Integral part sums error over time and allows to o
 
 ## Implementation
 
-Unfortunately the environment doesn't directly provide timestamps of data, so one way to held this is to use some C++ std capabilities. In this realization `#include <chrono>` is used.
+Unfortunately the environment doesn't directly provide timestamps of data, so one way to held this is to use some C++ std capabilities. In this realization `#include <chrono>` is used, so it leads to classic PID formula.
 
-It took several iterations to tune parameters, values from lessons were taken as initial parameters. Final values are the following:
+It took several iterations to manually tune parameters. Final values are the following:
 Kp = 0.08,
 Ki = 20,
-Kd = 0.0001
+Kd = 0.0001.
 
 
 ## Some discussion
